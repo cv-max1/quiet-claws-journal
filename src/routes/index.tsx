@@ -9,7 +9,7 @@ export const Route = createFileRoute("/")({
 
 const SANS = "'Inter', system-ui, -apple-system, sans-serif";
 const SERIF = "'Source Serif 4', Georgia, 'Times New Roman', serif";
-const OUTBOUND = "https://example.com/nail-board"; // single outbound CTA link
+const OUTBOUND = "https://thedogparlor.store/products/dog-nail-file-board-adjustable-wooden-scratching-board-for-nail-trimming-self-scratcher-toy-safe-pet-grooming-accessories"; // single outbound CTA link
 
 function Masthead() {
   return (
