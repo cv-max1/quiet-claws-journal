@@ -256,16 +256,13 @@ function Index() {
             className="my-8 bg-muted/60 border border-border rounded-sm p-6 md:p-7"
           >
             <p className="italic text-[1.05rem] md:text-[1.1rem] leading-relaxed text-foreground/90">
-              [Replace with a real, verified customer story before publishing — specific dog name,
-              specific past failure, specific timeline, specific result.]
+              "Cody wouldn't tolerate clippers or a vet's dremel, even with two people holding her, within 10 days, she was walking up to the board on her own for treats."
             </p>
             <p
               style={{ fontFamily: SANS }}
               className="mt-4 text-xs md:text-sm uppercase tracking-[0.18em] text-muted-foreground"
             >
-              Example shape to match: "[Dog name] wouldn't tolerate clippers or a vet's Dremel,
-              even with two people holding her. Within [X days], she was walking up to the board on
-              her own for treats." — [Name], [Dog name]'s owner
+              — Daniel W, Cody's Owner
             </p>
           </div>
 
