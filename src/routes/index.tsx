@@ -1,7 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
-import heroDog from "@/assets/hero-dog.jpg";
-import pawHands from "@/assets/paw-hands.jpg";
-import scratchBoard from "@/assets/scratch-board.jpg";
+import heroDogAsset from "@/assets/hero-dog.avif.asset.json";
+import pawHandsAsset from "@/assets/paw-hands.avif.asset.json";
+import scratchBoardAsset from "@/assets/scratch-board.jpg.asset.json";
+
+const heroDog = heroDogAsset.url;
+const pawHands = pawHandsAsset.url;
+const scratchBoard = scratchBoardAsset.url;
 
 export const Route = createFileRoute("/")({
   component: Index,
