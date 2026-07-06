@@ -31,29 +31,214 @@ function CtaButton({ label }: { label: string }) {
 
 function Masthead() {
   return (
-    <header className="pt-8 pb-4 md:pt-12 md:pb-6 text-center">
+    <div className="pt-6 pb-2 md:pt-8 md:pb-4">
       <div
         style={{ fontFamily: SANS }}
-        className="text-2xl md:text-4xl font-bold tracking-tight text-foreground"
-      >
-        The Modern Pet Journal
-      </div>
-      <div
-        style={{ fontFamily: SANS }}
-        className="mt-2 text-[11px] md:text-xs uppercase tracking-[0.28em] text-muted-foreground"
-      >
-        Pet Health, Behavior &amp; Care
-      </div>
-      <hr className="mt-6 border-t border-border" />
-      <div
-        style={{ fontFamily: SANS }}
-        className="mt-3 flex items-center justify-center gap-3 text-[10px] md:text-[11px] uppercase tracking-[0.22em] text-muted-foreground"
+        className="flex items-center gap-3 text-[10px] md:text-[11px] uppercase tracking-[0.22em] text-muted-foreground"
       >
         <span>Pet Health &amp; Behavior</span>
         <span aria-hidden className="opacity-40">·</span>
         <span>Partner Content</span>
       </div>
+    </div>
+  );
+}
+
+const NAV_LINKS = [
+  "Home",
+  "Dog Care",
+  "Cat Care",
+  "Training Tips",
+  "About",
+  "Contact",
+];
+
+const TOPIC_TAGS = [
+  "Nail Care",
+  "Anxiety & Behavior",
+  "Grooming",
+  "Product Reviews",
+];
+
+function SiteHeader() {
+  return (
+    <header className="border-b border-border bg-card">
+      <div className="mx-auto w-full max-w-[1100px] px-5 md:px-8">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 md:gap-6 py-5 md:py-6">
+          <a
+            href="/"
+            style={{ fontFamily: SANS }}
+            className="text-xl md:text-2xl font-bold tracking-tight text-foreground"
+          >
+            The Modern Pet Journal
+          </a>
+          <nav
+            style={{ fontFamily: SANS }}
+            className="flex flex-wrap items-center gap-x-5 gap-y-2 md:gap-x-7 text-sm md:text-[15px] text-foreground/80"
+          >
+            {NAV_LINKS.map((label) => (
+              <a
+                key={label}
+                href="#"
+                className="hover:text-primary transition-colors"
+              >
+                {label}
+              </a>
+            ))}
+          </nav>
+        </div>
+        <div
+          style={{ fontFamily: SANS }}
+          className="flex flex-wrap gap-2 pb-4 md:pb-5"
+        >
+          {TOPIC_TAGS.map((tag) => (
+            <a
+              key={tag}
+              href="#"
+              className="rounded-full border border-border bg-background px-3 py-1 text-xs md:text-[13px] text-foreground/80 hover:border-primary hover:text-primary transition-colors"
+            >
+              {tag}
+            </a>
+          ))}
+        </div>
+      </div>
     </header>
+  );
+}
+
+const RELATED_POSTS = [
+  {
+    tag: "Cat Behavior",
+    title: "Why Does My Cat Knead Blankets?",
+    teaser: "The surprisingly sweet reason behind that rhythmic paw motion.",
+    hue: "from-amber-200/60 to-rose-200/60",
+  },
+  {
+    tag: "Dog Health",
+    title: "5 Signs Your Dog Is Overdue for a Vet Visit",
+    teaser: "Small changes at home that often point to something bigger.",
+    hue: "from-emerald-200/60 to-teal-200/60",
+  },
+  {
+    tag: "Training",
+    title: "The One Leash Habit That Ends Pulling for Good",
+    teaser: "A quiet shift in your walk that most dogs pick up in a week.",
+    hue: "from-sky-200/60 to-indigo-200/60",
+  },
+  {
+    tag: "Grooming",
+    title: "How Often Should You Really Bathe Your Dog?",
+    teaser: "The truth about skin, coat health, and 'that dog smell.'",
+    hue: "from-orange-200/60 to-amber-300/60",
+  },
+];
+
+function RelatedArticles() {
+  return (
+    <section className="border-t border-border bg-card">
+      <div className="mx-auto w-full max-w-[1100px] px-5 md:px-8 py-12 md:py-16">
+        <div className="flex items-baseline justify-between mb-6 md:mb-8">
+          <h2
+            style={{ fontFamily: SANS }}
+            className="text-xl md:text-2xl font-bold tracking-tight text-foreground"
+          >
+            More From The Journal
+          </h2>
+          <a
+            href="#"
+            style={{ fontFamily: SANS }}
+            className="text-sm text-primary hover:underline underline-offset-4"
+          >
+            View all →
+          </a>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-7">
+          {RELATED_POSTS.map((post) => (
+            <a
+              key={post.title}
+              href="#"
+              className="group block"
+            >
+              <div
+                className={`aspect-[4/3] w-full rounded-sm bg-gradient-to-br ${post.hue} border border-border`}
+              />
+              <div
+                style={{ fontFamily: SANS }}
+                className="mt-3 text-[10px] uppercase tracking-[0.2em] text-primary"
+              >
+                {post.tag}
+              </div>
+              <h3
+                style={{ fontFamily: SANS }}
+                className="mt-1 text-base md:text-lg font-semibold leading-snug text-foreground group-hover:text-primary transition-colors"
+              >
+                {post.title}
+              </h3>
+              <p
+                style={{ fontFamily: SERIF }}
+                className="mt-1.5 text-sm text-muted-foreground leading-relaxed"
+              >
+                {post.teaser}
+              </p>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function SiteFooter() {
+  return (
+    <footer className="border-t border-border bg-foreground text-background/85">
+      <div className="mx-auto w-full max-w-[1100px] px-5 md:px-8 py-12 md:py-14">
+        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8">
+          <div className="max-w-sm">
+            <div
+              style={{ fontFamily: SANS }}
+              className="text-lg md:text-xl font-bold tracking-tight text-background"
+            >
+              The Modern Pet Journal
+            </div>
+            <p
+              style={{ fontFamily: SERIF }}
+              className="mt-3 text-sm leading-relaxed text-background/70"
+            >
+              Independent reporting on pet health, behavior, and care — for the
+              people who share their homes with them.
+            </p>
+          </div>
+          <nav
+            style={{ fontFamily: SANS }}
+            className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-background/85"
+          >
+            <a href="#" className="hover:text-primary transition-colors">About Us</a>
+            <a href="#" className="hover:text-primary transition-colors">Contact</a>
+            <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-primary transition-colors">Terms</a>
+            <a href="#" className="hover:text-primary transition-colors">Affiliate Disclosure</a>
+          </nav>
+        </div>
+
+        <div
+          style={{ fontFamily: SANS }}
+          className="mt-10 pt-6 border-t border-background/15 text-xs leading-relaxed text-background/60"
+        >
+          <p className="mb-3">
+            <span className="uppercase tracking-[0.18em] text-background/80 font-semibold">
+              Affiliate Disclosure —
+            </span>{" "}
+            The Modern Pet Journal participates in affiliate programs and may
+            earn a commission on qualifying purchases made through links in our
+            articles, at no extra cost to you. Editorial perspective reflects
+            the author's personal experience and is not veterinary advice.
+            Always consult a licensed veterinarian for concerns about your
+            pet's health.
+          </p>
+          <p>© {new Date().getFullYear()} The Modern Pet Journal. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
   );
 }
 
@@ -125,8 +310,9 @@ function ArticleImage({
 
 function Index() {
   return (
-    <div className="min-h-screen bg-background">
-      <div className="mx-auto w-full max-w-[680px] px-5 md:px-6">
+    <div className="min-h-screen bg-background flex flex-col">
+      <SiteHeader />
+      <div className="mx-auto w-full max-w-[680px] px-5 md:px-6 flex-1">
         <Masthead />
 
         <article className="pb-24">
@@ -339,16 +525,10 @@ function Index() {
             <CtaButton label="Check Price & Availability →" />
           </div>
 
-          <footer
-            style={{ fontFamily: SANS }}
-            className="mt-16 pt-6 border-t border-border text-[11px] md:text-xs text-muted-foreground leading-relaxed text-center"
-          >
-            This article is partner content. The Modern Pet Journal may earn a commission if
-            you purchase through links in this article. Editorial perspective reflects the
-            author's personal experience and is not veterinary advice.
-          </footer>
         </article>
       </div>
+      <RelatedArticles />
+      <SiteFooter />
     </div>
   );
 }
