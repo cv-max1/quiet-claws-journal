@@ -15,6 +15,20 @@ const SANS = "'Inter', system-ui, -apple-system, sans-serif";
 const SERIF = "'Source Serif 4', Georgia, 'Times New Roman', serif";
 const OUTBOUND = "https://thedogparlor.store/products/dog-nail-file-board-adjustable-wooden-scratching-board-for-nail-trimming-self-scratcher-toy-safe-pet-grooming-accessories"; // single outbound CTA link
 
+function CtaButton({ label }: { label: string }) {
+  return (
+    <a
+      href={OUTBOUND}
+      target="_blank"
+      rel="noopener noreferrer sponsored"
+      style={{ fontFamily: SANS }}
+      className="inline-flex w-full md:w-auto items-center justify-center bg-primary text-primary-foreground px-8 md:px-12 py-5 md:py-6 text-lg md:text-2xl font-bold tracking-wide rounded-sm shadow-md hover:brightness-110 transition text-center"
+    >
+      {label}
+    </a>
+  );
+}
+
 function Masthead() {
   return (
     <header className="pt-8 pb-4 md:pt-12 md:pb-6 text-center">
@@ -153,36 +167,42 @@ function Index() {
           <P>I used to think my dog was just difficult.</P>
 
           <P>
-            Every nail trim was the same fight — clippers out, dog gone rigid, both of us
-            dreading the next ten minutes. I tried everything. Better treats. Slower approaches.
-            A Dremel instead of clippers, hoping the sound would feel less threatening than a blade.
-            Nothing stuck. Eventually I gave up and started paying a groomer every few weeks, and even
-            then she'd come home stressed, like something had happened that she just wanted to be done with.
+            Every nail trim was a fight. I got the clippers out and she froze. We both hated it.
+            I tried lots of things. Better treats. Going slow. A Dremel instead of clippers.
+            Nothing worked. In the end I gave up and paid a groomer. Even then she came home
+            scared and shaky.
           </P>
 
           <P>
-            I assumed this was just who she was. My fault, somehow, for not training her right early on.
+            I thought this was just who she was. I thought it was my fault for not training her better.
           </P>
 
           <P>
-            What actually changed things wasn't a better technique. It was something I stumbled into
-            almost by accident — a fact so obvious in hindsight that I couldn't believe I'd never once considered it.
+            What finally helped wasn't a new trick. It was one simple idea that I had never once thought about.
           </P>
+
+          <div className="my-10 flex flex-col items-center gap-4 rounded-sm border border-border bg-card px-5 py-8 md:px-8 md:py-10 text-center">
+            <p
+              style={{ fontFamily: SANS }}
+              className="text-base md:text-lg font-semibold text-foreground"
+            >
+              This is the board that fixed it for us.
+            </p>
+            <CtaButton label="See The Nail Board →" />
+          </div>
 
           <Subhead>Dogs Have Been Doing This Themselves for Thousands of Years</Subhead>
 
           <P>
-            Before dogs lived indoors — before carpet, before hardwood floors — nail trimming simply
-            wasn't a thing that needed to happen. Wild dogs and their ancestors ran, dug, and hunted
-            on rock, gravel, and packed earth every single day. The friction wore their nails down naturally.
-            No tools. No humans involved. No trauma.
+            A long time ago, dogs did not live in houses. There was no carpet. There were no
+            wood floors. Dogs ran and dug on rocks, gravel, and hard dirt every day. That
+            rough ground wore their nails down on its own. No tools. No people. No fear.
           </P>
 
           <P>
-            That instinct didn't disappear when dogs moved into our homes. We just took away the terrain
-            that used to trigger it. Somewhere along the way, "dog owner" started including a task no dog
-            ever needed help with for most of history — and we started treating the workaround, not the instinct,
-            as the solution.
+            Dogs still know how to do this. We just took away the rough ground they used to
+            do it on. So cutting nails became a people job — a job dogs never needed help
+            with for most of time.
           </P>
 
           <PullQuote>
@@ -198,20 +218,19 @@ function Index() {
           <Subhead>So Why Do Clippers and Dremels Still Fail So Often?</Subhead>
 
           <P>
-            Once I understood the instinct was still there, the failures of every traditional method
-            made a lot more sense.
+            Once I saw that dogs still know how to do this, the old ways made more sense — and so
+            did why they fail.
           </P>
 
           <P>
-            Clippers, Dremels, even professional groomer restraint — they all ask a dog to do the one
-            thing that instinct never required: go completely still and hand over control of their body
-            to someone else. For a dog with any nail sensitivity, that's enough to trigger real fight-or-flight,
-            every time. Push through it repeatedly, and the fear only gets wired in deeper.
+            Clippers, Dremels, and being held by a groomer all ask a dog to do one hard thing:
+            hold very still and let someone else touch their paws. For a scared dog, that feels
+            like a trap. Every time you push through it, the fear gets bigger.
           </P>
 
           <P>
-            It was never a training failure. These methods were never going to work with the instinct —
-            they were built to work against it.
+            It was never bad training. These tools were never going to work with your dog. They
+            work against her.
           </P>
 
           <Subhead>Recreating What Nature Already Built In</Subhead>
@@ -223,36 +242,34 @@ function Index() {
           />
 
           <P>
-            Once I understood this, the search changed. I wasn't looking for a better way to force
-            something on my dog anymore. I was looking for something that gave the instinct a surface
-            to act on again.
+            After I saw all this, I stopped looking for a way to force my dog. I started looking
+            for the rough surface she never had inside.
           </P>
 
           <P>
-            That's how I found a simple wooden board — angled, with a safe abrasive surface and a small
-            treat compartment. She paws at it to reach the treat, and the filing happens as a quiet side
-            effect of something she already wanted to do. It isn't teaching her a new trick. It's just
-            giving her the terrain she never had indoors.
+            That is how I found a small wooden board. It sits at an angle. It has a rough (but
+            safe) top and a tiny treat spot. She paws at it to get the treat. The filing just
+            happens while she does it. I did not teach her a new trick. I just gave her back the
+            ground she was missing.
           </P>
 
           <Subhead>What Actually Changed</Subhead>
 
           <P>
-            I didn't expect much, honestly — I'd been let down by "solutions" before. But within the
-            first week, she was walking up to the board on her own. No coaxing, no bracing for a fight.
-            Within a few weeks her nails were visibly shorter, and something else had shifted too: she
-            stopped tensing up when I reached toward her paws at all, even outside of nail sessions.
+            I did not expect much. I had been let down before. But in the first week she walked
+            up to the board on her own. No fight. In a few weeks her nails were shorter. And
+            something else changed too — she stopped pulling her paws away when I touched them.
           </P>
 
           <P>
-            I didn't fix a behavior problem. I just stopped standing between her and something she already knew how to do.
+            I did not fix a bad behavior. I just got out of her way.
           </P>
 
           <Subhead>I Wasn't the Only One</Subhead>
 
           <P>
-            Once I started looking, I found this wasn't just working for mildly anxious dogs —
-            it was working for genuinely severe cases.
+            Once I started looking, I saw this was working for other dogs too — even the
+            really scared ones.
           </P>
 
           <div
@@ -273,34 +290,34 @@ function Index() {
           <Subhead>The Questions I Had Before I Tried It</Subhead>
 
           <P>
-            <strong>"Is this actually instinctive, or is that just marketing?"</strong> — This was my first
-            skepticism too. Wolf sanctuaries and wildlife researchers have documented this for years:
-            without rough terrain, nails simply don't wear down on their own — which is exactly why it's
-            a modern, indoor-living problem in the first place.
+            <strong>"Is this real, or just a sales pitch?"</strong> — I asked this too. People who
+            study wolves and wild dogs have shown this for years. Without rough ground, nails do
+            not wear down. That is why it is a house-dog problem in the first place.
           </P>
 
           <P>
-            <strong>"Will this work for a dog as anxious as mine?"</strong> — The cases that convinced me
-            were the extreme ones — dogs with real nail trauma learning to use the board voluntarily within
-            days, without anyone forcing anything.
+            <strong>"Will it work for a really scared dog?"</strong> — The stories that sold me were
+            the hard ones. Dogs who were afraid of nail time started using the board on their own
+            in just a few days. No one forced them.
           </P>
 
           <P>
-            <strong>"What if she just eats the treat without scratching?"</strong> — The treat sits in a
-            compartment, not on the surface — reaching it requires the pawing motion that does the filing.
+            <strong>"What if she just grabs the treat and stops?"</strong> — She can't. The treat
+            sits inside a little hole. To reach it, she has to paw at the top. The pawing is what
+            files the nails.
           </P>
 
           <P>
-            <strong>"Is this actually cheaper than what I'm already doing?"</strong> — At $15–$50 per groomer
-            visit every 2–4 weeks, that's $390–$1,300 a year. This was a one-time cost that paid for itself
-            before my next groomer appointment would've even been due.
+            <strong>"Is it cheaper than what I already pay?"</strong> — Groomers cost about $15 to
+            $50 each time. Most people go every 2 to 4 weeks. That is $390 to $1,300 a year. The
+            board is one small cost, one time.
           </P>
 
           <Subhead>If You're Dealing With the Same Thing</Subhead>
 
           <P>
-            If any of this sounds familiar — a dog who's defeated every clipper, every Dremel, every groomer
-            attempt, and a growing pile of guilt every time you hear those nails click on the floor — this is
+            If this sounds like your dog — a dog who beats every clipper, every Dremel, and every
+            groomer, and you feel bad every time you hear those nails click on the floor — this is
             the board that gave my dog back the thing she already knew how to do.
           </P>
 
@@ -319,15 +336,7 @@ function Index() {
           </p>
 
           <div className="my-12 flex justify-center">
-            <a
-              href={OUTBOUND}
-              target="_blank"
-              rel="noopener noreferrer sponsored"
-              style={{ fontFamily: SANS }}
-              className="inline-flex items-center justify-center bg-primary text-primary-foreground px-8 md:px-10 py-4 md:py-5 text-base md:text-lg font-semibold tracking-wide rounded-sm shadow-sm hover:brightness-110 transition"
-            >
-              Check Current Availability
-            </a>
+            <CtaButton label="Check Price & Availability →" />
           </div>
 
           <footer
